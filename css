@@ -1,0 +1,174 @@
+.bg_outer {
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  margin: auto;
+  background: pink;
+}
+
+.bubble_container {
+  width: 350px;
+  position: relative;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+div:not(:has(+ .bubble_container)) {
+  margin-bottom: 0;
+}
+
+.cxn_allowed, .CAwhite {
+  display: none;
+}
+
+*:has(+ .bubble_container.right) .cxn_allowed {
+  display: inline;
+}
+
+*:has(> .bubble_container.right + .bubble_container.right) .cxn_allowed {
+  width: 0px;
+  height: 60px;
+  border-radius: 20% 55% 55% 20%;
+  border-right: 30px solid black;
+  position: absolute;
+  bottom: -40px;
+  right: 120px;
+}
+
+*:has(> .bubble_container.right + .bubble_container.right) .CAwhite {
+  display: inline;
+  width: 0px;
+  height: 60px;
+  border-radius: 20% 55% 55% 20%;
+  border-right: 20px solid white;
+  position: absolute;
+  right: -25px;
+  z-index: 1000;
+}
+
+.bubble {
+  background: white;
+  min-height: 80px;
+  border-radius: 48%;
+  text-align: center;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+  font-style: italic;
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 100;
+}
+
+.bubble_right {
+  transform-style: preserve-3d;
+}
+
+.bubble_right::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 60px solid white;
+  transform: rotate(-35deg);
+  position: absolute;
+  bottom: -2px;
+  right: 9px;
+  z-index: -100;
+}
+
+.bubble_right::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 60px solid black;
+  transform: rotate(-35deg) translateZ(-1px);
+  position: absolute;
+  bottom: -10px;
+  right: 0px;
+  z-index: -200;
+}
+
+.bubble_left {
+  transform-style: preserve-3d;
+}
+
+.bubble_left::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 60px solid white;
+  transform: rotate(35deg);
+  position: absolute;
+  bottom: -2px;
+  left: 9px;
+  z-index: -100;
+}
+
+.bubble_left::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 60px solid black;
+  transform: rotate(35deg) translateZ(-1px);
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  z-index: -200;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.icon_right {
+  bottom: 50px;
+}
+
+.icon_shadow_right {
+  bottom: 45px;
+  left: 7px;
+}
+
+.icon_left {
+  bottom: 50px;
+  right: 60px;
+}
+
+.icon_shadow_left {
+  bottom: 45px;
+  right: 61px;
+}
+
+.icons {
+  transform: scale(0.15);
+  margin: -220px;
+  z-index: 2000;
+  position: absolute;
+  bottom: 120px;
+}
+
+.icons_l {
+  right: 70px;
+}
+
+.icons_r {
+  left: 70px;
+}
