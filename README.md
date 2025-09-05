@@ -22,4 +22,4 @@
 </ol>
 
 <h4>link:</h4>
-<p>here's a link to a functioning example: <a href="https://codepen.io/stoneflywheel/pen/empxJVx">click me!</a></p>
+<p>here's a link to a functioning example: <a href="https://codepen.io/stoneflywheel/pen/JoYxZoG">click me!</a></p>
