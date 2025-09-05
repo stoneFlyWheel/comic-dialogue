@@ -18,3 +18,8 @@
     </ol>
   <li>only superman's icon is there so far</li>
 </ol>
+
+<h4>notes:</h4>
+<ol>
+  <li>this project was made in the middle of my github transition. some parts of it are version-controlled, but the majority of the code exists as its partially finished form only.</li>
+</ol>
