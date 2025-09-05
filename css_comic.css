@@ -61,7 +61,6 @@ div:not(:has(+ .bubble_container)) {
   font-size: 1.4em;
   font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
   font-style: italic;
-  transform-style: preserve-3d;
   position: relative;
   z-index: 100;
 }
