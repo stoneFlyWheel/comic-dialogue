@@ -82,7 +82,6 @@
   font-size: 1.4em;
   font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
   font-style: italic;
-  transform-style: preserve-3d;
   position: relative;
   z-index: 100;
 }
@@ -186,19 +185,22 @@
   right: 61px;
 }
 
-/* code adapted from here :
-
-https://codepen.io/oyedeletemitope/pen/rNQjZjO?editors=1100
-
-*/
-
 .icons {
   display: none;
-  transform: scale(0.15);
   margin: -220px;
   z-index: 2000;
   position: absolute;
+}
+
+.icons_superman {
+  transform: scale(0.15);
   bottom: 120px;
+}
+
+.icons_batman {
+  transform: scale(0.1);
+  bottom: -45px;
+  left: 150px;
 }
 
 .icons_l {
@@ -209,7 +211,7 @@ https://codepen.io/oyedeletemitope/pen/rNQjZjO?editors=1100
   left: 70px;
 }
 
-/* .left:not(:has(+ .left)) + .right>.icons {
+.left:not(:has(+ .left)) + .right>.icons {
   display: inline;
 }
 
@@ -217,17 +219,17 @@ https://codepen.io/oyedeletemitope/pen/rNQjZjO?editors=1100
   display: inline;
 }
 
-.right:first-of-type > .icons {
+.bg_outer > .right:first-child > .icons {
   display: inline;
 }
 
-.left:first-of-type > .icons {
+.bg_outer > .left:first-child > .icons {
   display: inline;
-} */
+}
 
 /* tails */
 
-/* .left:not(:has(+ .left)) + .right>.maybe_tailR {
+.left:not(:has(+ .left)) + .right>.maybe_tailR {
   display: inline;
 }
 
@@ -235,26 +237,10 @@ https://codepen.io/oyedeletemitope/pen/rNQjZjO?editors=1100
   display: inline;
 }
 
-.bg_outer:first-child:has(.right) > .right > .maybe_tailR {
+.bg_outer > .right:first-child > .maybe_tailR {
   display: inline;
 }
 
-.bg_outer:first-child:has(.left) > .left > .maybe_tailL {
+.bg_outer > .left:first-child > .maybe_tailL {
   display: inline;
-} */
-
-.left:not(:has(+ .left)) + .right>.bubble {
-  color: blue;
-}
-
-.right:not(:has(+ .right)) + .left>.bubble {
-  color: red;
-}
-
-.bg_outer > .right:first-child > .bubble {
-  background: green;
-}
-
-.bg_outer > .left:first-child > .bubble {
-  background: yellow;
 }
