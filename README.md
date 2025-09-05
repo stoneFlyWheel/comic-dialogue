@@ -10,13 +10,10 @@
 
 <h4>current issues:</h4>
 <ol>
-  <li>the logic isn't logic-ing</li>
-    <ol>
-      <li>the connection lines are triggering on the wrong things</li>
-      <li>the tails don't disappear when connected</li>
-      <li>the icons don't disappear when connected</li>
-    </ol>
-  <li>only superman's icon is there so far</li>
+  <li><i>minor:</i> there's only one option for bubble shape</li>
+  <ol>
+    <li>idk how i'm gonna do that though :/</li>
+  </ol>
 </ol>
 
 <h4>notes:</h4>
