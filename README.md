@@ -5,7 +5,7 @@
   <li>good-looking comic bubbles</li>
   <li>easy to implement, without excessive amounts of classes inside</li>
   <li>easy to customize</li>
-  <li>CSS logic !</li>
+  <li>learn more complex selector logic</li>
 </ol>
 
 <h4>current issues:</h4>
