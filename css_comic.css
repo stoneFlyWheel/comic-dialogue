@@ -1,5 +1,6 @@
 .bg_outer {
-  width: 500px;
+  width: 90%;
+  max-width: 600px;
   height: auto;
   padding: 20px;
   margin: auto;
@@ -13,30 +14,11 @@
   margin-bottom: 15px;
 }
 
-div:not(:has(+ .bubble_container)) {
-  margin-bottom: 0;
+.bg_outer:not(:has(+ .bubble_container)) {
+  padding-bottom: 7px;
 }
 
-.cxn_allowed, .CAwhite {
-  display: none;
-}
-
-*:has(+ .bubble_container.right) .cxn_allowed {
-  display: inline;
-}
-
-*:has(> .bubble_container.right + .bubble_container.right) .cxn_allowed {
-  width: 0px;
-  height: 60px;
-  border-radius: 20% 55% 55% 20%;
-  border-right: 30px solid black;
-  position: absolute;
-  bottom: -40px;
-  right: 120px;
-}
-
-*:has(> .bubble_container.right + .bubble_container.right) .CAwhite {
-  display: inline;
+.CAwhite {
   width: 0px;
   height: 60px;
   border-radius: 20% 55% 55% 20%;
@@ -46,12 +28,51 @@ div:not(:has(+ .bubble_container)) {
   z-index: 1000;
 }
 
+.cxn_allowed, .CAwhite {
+  display: none;
+}
+
+.cxn_allowed {
+  width: 0px;
+  height: 60px;
+  border-radius: 20% 55% 55% 20%;
+  border-right: 30px solid black;
+  position: absolute;
+  bottom: -40px;
+}
+
+.right:has(+ .bubble_container.right) .cxn_allowed {
+  display: inline;
+  right: 120px;
+}
+
+.right:has(+ .bubble_container.right) .CAwhite {
+  display: inline;
+}
+
+.left:has(+ .bubble_container.left) .cxn_allowed {
+  display: inline;
+  border-radius: 55% 20% 20% 55%;
+  border-left: 30px solid black;
+  border-right: 0;
+  left: 120px;
+}
+
+.left:has(+ .bubble_container.left) .CAwhite {
+  display: inline;
+  border-radius: 55% 20% 20% 55%;
+  border-left: 20px solid white;
+  border-right: 0;
+  position: absolute;
+  left: -25px;
+}
+
 .bubble {
   background: white;
   min-height: 80px;
   border-radius: 48%;
   text-align: center;
-  padding: 30px;
+  padding: 30px 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,11 +82,13 @@ div:not(:has(+ .bubble_container)) {
   font-size: 1.4em;
   font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
   font-style: italic;
+  transform-style: preserve-3d;
   position: relative;
   z-index: 100;
 }
 
 .maybe_tailR {
+  display: none;
   width: 0;
   height: 0;
   position: absolute;
@@ -91,16 +114,17 @@ div:not(:has(+ .bubble_container)) {
   content: '';
   width: 0;
   height: 0;
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
-  border-top: 60px solid black;
+  border-left: 38px solid transparent;
+  border-right: 38px solid transparent;
+  border-top: 80px solid black;
   transform: rotate(-35deg);
   position: absolute;
-  bottom: -10px;
-  right: 0px;
+  bottom: -12px;
+  right: -5px;
 }
 
 .maybe_tailL {
+  display: none;
   width: 0;
   height: 0;
   position: absolute;
@@ -126,13 +150,13 @@ div:not(:has(+ .bubble_container)) {
   content: '';
   width: 0;
   height: 0;
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
-  border-top: 60px solid black;
+  border-left: 38px solid transparent;
+  border-right: 38px solid transparent;
+  border-top: 80px solid black;
   transform: rotate(35deg);
   position: absolute;
   bottom: -10px;
-  left: 0px;
+  left: -2px;
 }
 
 .left {
@@ -162,7 +186,14 @@ div:not(:has(+ .bubble_container)) {
   right: 61px;
 }
 
+/* code adapted from here :
+
+https://codepen.io/oyedeletemitope/pen/rNQjZjO?editors=1100
+
+*/
+
 .icons {
+  display: none;
   transform: scale(0.15);
   margin: -220px;
   z-index: 2000;
@@ -176,4 +207,54 @@ div:not(:has(+ .bubble_container)) {
 
 .icons_r {
   left: 70px;
+}
+
+/* .left:not(:has(+ .left)) + .right>.icons {
+  display: inline;
+}
+
+.right:not(:has(+ .right)) + .left>.icons {
+  display: inline;
+}
+
+.right:first-of-type > .icons {
+  display: inline;
+}
+
+.left:first-of-type > .icons {
+  display: inline;
+} */
+
+/* tails */
+
+/* .left:not(:has(+ .left)) + .right>.maybe_tailR {
+  display: inline;
+}
+
+.right:not(:has(+ .right)) + .left>.maybe_tailL {
+  display: inline;
+}
+
+.bg_outer:first-child:has(.right) > .right > .maybe_tailR {
+  display: inline;
+}
+
+.bg_outer:first-child:has(.left) > .left > .maybe_tailL {
+  display: inline;
+} */
+
+.left:not(:has(+ .left)) + .right>.bubble {
+  color: blue;
+}
+
+.right:not(:has(+ .right)) + .left>.bubble {
+  color: red;
+}
+
+.bg_outer > .right:first-child > .bubble {
+  background: green;
+}
+
+.bg_outer > .left:first-child > .bubble {
+  background: yellow;
 }
