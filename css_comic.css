@@ -66,11 +66,15 @@ div:not(:has(+ .bubble_container)) {
   z-index: 100;
 }
 
-.bubble_right {
-  transform-style: preserve-3d;
+.maybe_tailR {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
 }
 
-.bubble_right::after {
+.maybe_tailR::after {
   content: '';
   width: 0;
   height: 0;
@@ -81,28 +85,31 @@ div:not(:has(+ .bubble_container)) {
   position: absolute;
   bottom: -2px;
   right: 9px;
-  z-index: -100;
+  z-index: 1000;
 }
 
-.bubble_right::before {
+.maybe_tailR::before {
   content: '';
   width: 0;
   height: 0;
   border-left: 28px solid transparent;
   border-right: 28px solid transparent;
   border-top: 60px solid black;
-  transform: rotate(-35deg) translateZ(-1px);
+  transform: rotate(-35deg);
   position: absolute;
   bottom: -10px;
   right: 0px;
-  z-index: -200;
 }
 
-.bubble_left {
-  transform-style: preserve-3d;
+.maybe_tailL {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
 }
 
-.bubble_left::after {
+.maybe_tailL::after {
   content: '';
   width: 0;
   height: 0;
@@ -113,21 +120,20 @@ div:not(:has(+ .bubble_container)) {
   position: absolute;
   bottom: -2px;
   left: 9px;
-  z-index: -100;
+  z-index: 1000;
 }
 
-.bubble_left::before {
+.maybe_tailL::before {
   content: '';
   width: 0;
   height: 0;
   border-left: 28px solid transparent;
   border-right: 28px solid transparent;
   border-top: 60px solid black;
-  transform: rotate(35deg) translateZ(-1px);
+  transform: rotate(35deg);
   position: absolute;
   bottom: -10px;
   left: 0px;
-  z-index: -200;
 }
 
 .left {
