@@ -244,3 +244,11 @@
 .bg_outer > .left:first-child > .maybe_tailL {
   display: inline;
 }
+
+.right:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.left:nth-child(odd) {
+  margin-left: 40px;
+}
