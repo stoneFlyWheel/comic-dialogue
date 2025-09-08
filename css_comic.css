@@ -1,4 +1,4 @@
-.bg_outer {
+..bg_outer {
   width: 90%;
   max-width: 600px;
   height: auto;
@@ -14,8 +14,12 @@
   margin-bottom: 15px;
 }
 
-.bg_outer:not(:has(+ .bubble_container)) {
-  padding-bottom: 7px;
+.bg_outer > .bubble_container:last-child {
+  margin-bottom: 27px;
+}
+
+.bg_outer > .bubble_container:first-child {
+  margin-top: 27px;
 }
 
 .CAwhite {
@@ -41,16 +45,16 @@
   bottom: -40px;
 }
 
-.right:has(+ .bubble_container.right) .cxn_allowed {
+.right.superman:has(+ .bubble_container.right.superman) .cxn_allowed {
   display: inline;
   right: 120px;
 }
 
-.right:has(+ .bubble_container.right) .CAwhite {
+.right.superman:has(+ .bubble_container.right.superman) .CAwhite {
   display: inline;
 }
 
-.left:has(+ .bubble_container.left) .cxn_allowed {
+.left.batman:has(+ .bubble_container.left.batman) .cxn_allowed {
   display: inline;
   border-radius: 55% 20% 20% 55%;
   border-left: 30px solid black;
@@ -58,7 +62,41 @@
   left: 120px;
 }
 
-.left:has(+ .bubble_container.left) .CAwhite {
+.left.batman:has(+ .bubble_container.left.batman) .CAwhite {
+  display: inline;
+  border-radius: 55% 20% 20% 55%;
+  border-left: 20px solid white;
+  border-right: 0;
+  position: absolute;
+  left: -25px;
+}
+
+.left.superman:has(+ .bubble_container.left.superman) .cxn_allowed {
+  display: inline;
+  border-radius: 55% 20% 20% 55%;
+  border-left: 30px solid black;
+  border-right: 0;
+  left: 120px;
+}
+
+.left.superman:has(+ .bubble_container.left.superman) .CAwhite {
+  display: inline;
+  border-radius: 55% 20% 20% 55%;
+  border-left: 20px solid white;
+  border-right: 0;
+  position: absolute;
+  left: -25px;
+}
+
+.left.flash:has(+ .bubble_container.left.flash) .cxn_allowed {
+  display: inline;
+  border-radius: 55% 20% 20% 55%;
+  border-left: 30px solid black;
+  border-right: 0;
+  left: 120px;
+}
+
+.left.flash:has(+ .bubble_container.left.flash) .CAwhite {
   display: inline;
   border-radius: 55% 20% 20% 55%;
   border-left: 20px solid white;
@@ -86,7 +124,7 @@
   z-index: 100;
 }
 
-.maybe_tailR {
+.right > .maybe_tail {
   display: none;
   width: 0;
   height: 0;
@@ -95,7 +133,7 @@
   right: 10px;
 }
 
-.maybe_tailR::after {
+.right > .maybe_tail::after {
   content: '';
   width: 0;
   height: 0;
@@ -109,7 +147,7 @@
   z-index: 1000;
 }
 
-.maybe_tailR::before {
+.right > .maybe_tail::before {
   content: '';
   width: 0;
   height: 0;
@@ -122,7 +160,7 @@
   right: -5px;
 }
 
-.maybe_tailL {
+.left > .maybe_tail {
   display: none;
   width: 0;
   height: 0;
@@ -131,7 +169,7 @@
   left: 10px;
 }
 
-.maybe_tailL::after {
+.left > .maybe_tail::after {
   content: '';
   width: 0;
   height: 0;
@@ -145,7 +183,7 @@
   z-index: 1000;
 }
 
-.maybe_tailL::before {
+.left > .maybe_tail::before {
   content: '';
   width: 0;
   height: 0;
@@ -154,8 +192,8 @@
   border-top: 80px solid black;
   transform: rotate(35deg);
   position: absolute;
-  bottom: -10px;
-  left: -2px;
+  bottom: -12px;
+  left: -5px;
 }
 
 .left {
@@ -164,25 +202,6 @@
 
 .right {
   margin-left: auto;
-}
-
-.icon_right {
-  bottom: 50px;
-}
-
-.icon_shadow_right {
-  bottom: 45px;
-  left: 7px;
-}
-
-.icon_left {
-  bottom: 50px;
-  right: 60px;
-}
-
-.icon_shadow_left {
-  bottom: 45px;
-  right: 61px;
 }
 
 .icons {
@@ -203,6 +222,12 @@
   left: 150px;
 }
 
+.icons_flash {
+  left: 45px;
+  bottom: -335px;
+  transform: scale(0.05);
+}
+
 .icons_l {
   right: 70px;
 }
@@ -211,11 +236,15 @@
   left: 70px;
 }
 
-.left:not(:has(+ .left)) + *>.icons {
+.superman:not(:has(+ .superman)) + *>.icons {
   display: inline;
 }
 
-.right:not(:has(+ .right)) + *>.icons {
+.batman:not(:has(+ .batman)) + *>.icons {
+  display: inline;
+}
+
+.flash:not(:has(+ .flash)) + *>.icons {
   display: inline;
 }
 
@@ -223,22 +252,32 @@
   display: inline;
 }
 
-/* tails */
-
-.left:not(:has(+ .left)) + *>.maybe_tailR {
+.batman:not(:has(+ .batman)) + *>.maybe_tail {
   display: inline;
 }
 
-.right:not(:has(+ .right)) + *>.maybe_tailL {
+.superman:not(:has(+ .superman)) + *>.maybe_tail {
   display: inline;
 }
 
-.bg_outer > *:first-child > .maybe_tailR {
+.flash:not(:has(+ .flash)) + *>.maybe_tail {
   display: inline;
 }
 
-.bg_outer > *:first-child > .maybe_tailL {
+.bg_outer > *:first-child > .maybe_tail {
   display: inline;
+}
+
+.batman:not(:has(+ .batman)) {
+  margin-bottom: 10px;
+}
+
+.superman:not(:has(+ .superman)) {
+  margin-bottom: 10px;
+}
+
+.flash:not(:has(+ .flash)) {
+  margin-bottom: 10px;
 }
 
 .right:nth-child(odd) {
