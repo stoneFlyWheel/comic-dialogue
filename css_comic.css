@@ -71,23 +71,6 @@
   left: -25px;
 }
 
-.left.superman:has(+ .bubble_container.left.superman) .cxn_allowed {
-  display: inline;
-  border-radius: 55% 20% 20% 55%;
-  border-left: 30px solid black;
-  border-right: 0;
-  left: 120px;
-}
-
-.left.superman:has(+ .bubble_container.left.superman) .CAwhite {
-  display: inline;
-  border-radius: 55% 20% 20% 55%;
-  border-left: 20px solid white;
-  border-right: 0;
-  position: absolute;
-  left: -25px;
-}
-
 .left.flash:has(+ .bubble_container.left.flash) .cxn_allowed {
   display: inline;
   border-radius: 55% 20% 20% 55%;
