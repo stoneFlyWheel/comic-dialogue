@@ -10,6 +10,7 @@
 
 <h4>current issues:</h4>
 <ol>
+  <li>make groupchats possible</li>
   <li><i>minor:</i> there's only one option for bubble shape</li>
   <ol>
     <li>idk how i'm gonna do that though :/</li>
