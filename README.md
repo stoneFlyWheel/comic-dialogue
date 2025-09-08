@@ -3,7 +3,7 @@
 <h4>my goals for this project:</h4>
 <ol>
   <li>good-looking comic bubbles</li>
-  <li>easy to implement, without excessive amounts of classes inside</li>
+  <li>easy to implement, without excessive amounts of divs/classes inside</li>
   <li>easy to customize</li>
   <li>learn more complex selector logic</li>
 </ol>
@@ -19,7 +19,7 @@
 
 <h4>notes:</h4>
 <ol>
-  <li>this project was made in the middle of my github transition. some parts of it are version-controlled, but the majority of the code exists as its partially finished form only.</li>
+  <li>this project was made in the middle of my github transition. some parts of it are version-controlled, but some of the code exists as its partially finished form only.</li>
 </ol>
 
 <h4>link:</h4>
