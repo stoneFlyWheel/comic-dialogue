@@ -211,37 +211,29 @@
   left: 70px;
 }
 
-.left:not(:has(+ .left)) + .right>.icons {
+.left:not(:has(+ .left)) + *>.icons {
   display: inline;
 }
 
-.right:not(:has(+ .right)) + .left>.icons {
+.right:not(:has(+ .right)) + *>.icons {
   display: inline;
 }
 
-.bg_outer > .right:first-child > .icons {
-  display: inline;
-}
-
-.bg_outer > .left:first-child > .icons {
+.bg_outer > *:first-child > .icons {
   display: inline;
 }
 
 /* tails */
 
-.left:not(:has(+ .left)) + .right>.maybe_tailR {
+.left:not(:has(+ .left)) + *>.maybe_tailR {
   display: inline;
 }
 
-.right:not(:has(+ .right)) + .left>.maybe_tailL {
+.right:not(:has(+ .right)) + *>.maybe_tailL {
   display: inline;
 }
 
-.bg_outer > .right:first-child > .maybe_tailR {
-  display: inline;
-}
-
-.bg_outer > .left:first-child > .maybe_tailL {
+.bg_outer > *:first-child > .maybe_tailR {
   display: inline;
 }
 
